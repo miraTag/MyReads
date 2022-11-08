@@ -1,6 +1,6 @@
-# MyReads Project
+# MyReads: A Book Tracking App
 
-This is the final assessment project for Udacity's React Nanodegree course. 
+This is the final assessment project for REACT FUNDAMENTALS from the  Udacity's React Nanodegree course. 
 ## TL;DR
 
 To get started:
