@@ -1,45 +1,21 @@
-import React from 'react'
+import React from "react";
+import Book from "../components/Book";
 
-const Books = ({book,onChangeShelf}) => {
-
-return (
-    book.id !== undefined && (
-    <div className="book">
-        <div className="book-top">
-            <div className="book-cover">
-                
-            {book.imageLinks !== undefined &&
-                
-                <img src={book.imageLinks.thumbnail} alt={book.title}>
-                </img>
-                   
-            }
-            </div>
-            <div className="book-shelf-changer">
-                <select onChange={(e) => onChangeShelf(book, e.target.value)} value={book.shelf}>
-                    <option value="na" disabled>Move to...</option>
-                    <option value="currentlyReading">Currently Reading</option>
-                    <option value="wantToRead">Want to Read</option>
-                    <option value="read">Read</option>
-                    <option value="none">None</option>
-                </select>
+const Page = ({ title, books, onMoveBook }) => {
+    const bookItems =
+        books.length > 0 &&
+        books.map((book) => (
+            <li key={book.id}>
+                <Book bookDetails={book} onMoveBook={onMoveBook} />
+            </li>
+        ));
+    return (
+        <div className="bookshelf">
+            <h2 className="bookshelf-title">{title}</h2>
+            <div className="bookshelf-books">
+                <ol className="books-grid">{bookItems.length && bookItems}</ol>
             </div>
         </div>
-
-        <div className="book-title">{book.title}</div>
-        {(book.authors != null) &&
-            <ul className="book-authors">{book.authors.map((author, index) => (
-            <li key={index}> {author}
-            </li>
-        ))}</ul>
-
-        }
-
-    </div>
-    )
-
-    )
-}
-
-
-export default Books;
+    );
+};
+export default Page;

@@ -1,21 +1,21 @@
-import React from "react";
-import Books from "./Books";
+import React from 'react';
 
-const bookshelf = ({ books, onChangeShelf, name }) => {
+const BookShelf = ({ book, onMoveBook, defaultValue }) => {
+  const selectHandler = (e) => {
+    onMoveBook(book, e.target.value);
+  };
   return (
-    <div className="bookshelf">
-      <h2 className="bookshelf-title">{name}</h2>
-      <div className="bookshelf-books">
-        <ol className="books-grid">
-          {books.map((book) => (
-            <li key={book.id}>
-              <Books book={book} onChangeShelf={onChangeShelf} />
-            </li>
-          ))}
-        </ol>
-      </div>
+    <div className='book-shelf-changer'>
+      <select onChange={selectHandler} value={defaultValue}>
+        <option value='none' disabled>
+          Move to...
+        </option>
+        <option value='currentlyReading'>Currently Reading</option>
+        <option value='wantToRead'>Want to Read</option>
+        <option value='read'>Read</option>
+        <option value='none'>None</option>
+      </select>
     </div>
   );
 };
-
-export default bookshelf;
+export default BookShelf;
