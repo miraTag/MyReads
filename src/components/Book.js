@@ -11,7 +11,7 @@ const Book = ({ bookDetails, onMoveBook }) => {
                         width: 128,
                         height: 193,
                         backgroundImage: `url(${
-                            bookDetails.imageLinks.thumbnail
+                            bookDetails.imageLinks
                                 ? bookDetails.imageLinks.thumbnail
                                 : ""
                         })`,
