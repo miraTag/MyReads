@@ -10,8 +10,11 @@ const Book = ({ bookDetails, onMoveBook }) => {
                     style={{
                         width: 128,
                         height: 193,
-                        backgroundImage: `url(${bookDetails.imageLinks !==
-                            undefined && bookDetails.imageLinks.thumbnail})`,
+                        backgroundImage: `url(${
+                            bookDetails.imageLinks.thumbnail
+                                ? bookDetails.imageLinks.thumbnail
+                                : ""
+                        })`,
                     }}
                 ></div>
                 <BookShelf
