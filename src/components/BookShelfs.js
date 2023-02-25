@@ -1,6 +1,6 @@
 import React from "react";
 
-const BookShelfs = ({ book, onMoveBook, defaultValue }) => {
+const BookShelf = ({ book, onMoveBook, defaultValue }) => {
     const selectHandler = (e) => {
         onMoveBook(book, e.target.value);
     };
@@ -18,4 +18,4 @@ const BookShelfs = ({ book, onMoveBook, defaultValue }) => {
         </div>
     );
 };
-export default BookShelfs;
+export default BookShelf;

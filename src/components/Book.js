@@ -1,5 +1,5 @@
 import React from "react";
-import BookShelfs from "./BookShelfs.js";
+import BookShelf from "./BookShelf.js";
 
 const Book = ({ bookDetails, onMoveBook }) => {
     return (
@@ -17,7 +17,7 @@ const Book = ({ bookDetails, onMoveBook }) => {
                         })`,
                     }}
                 ></div>
-                <BookShelfs
+                <BookShelf
                     book={bookDetails}
                     onMoveBook={onMoveBook}
                     defaultValue={bookDetails.shelf}
